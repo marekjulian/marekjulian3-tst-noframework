@@ -1,0 +1,77 @@
+//
+// Color Palette
+//
+
+//
+// Basic colors:
+//
+$marekjulian-magenta: #de3dbf;
+$marekjulian-gray: #555555;
+$marekjulian-light-gray: #777777;
+$text-gray: #707070;
+$light-gray: #9c9ea1;
+
+//
+// Site colors:
+//
+$dark-background: #000000;
+$dark-gray-background: #2a2a2a;
+$nav-gray: $marekjulian-light-gray;
+$row-border-color: $marekjulian-light-gray;
+$header-bg-color: $dark-background;
+$header-border-color: $row-border-color;
+$header-text-color: $marekjulian-light-gray;
+$content-text-color: $text-gray;
+$content-headings-color: $light-gray;
+$footer-bg-color: $dark-background;
+$footer-border-color: $row-border-color;
+$footer-text-color: $marekjulian-light-gray;
+$link-color: $marekjulian-light-gray;
+$link-hover-color: $marekjulian-magenta;
+
+//
+// Fonts
+//
+$headings-font-family: 'helvetica';
+
+//
+// Font sizes
+//
+//  In general, try and accomplish this with EMs, but assume
+//  default document font size is 16px == 1em.
+//
+// 11px / 16.5px -  body copy
+// 24px          - main heading, h1
+// 18px          - sub heading, h2
+// 16px          - All navigation, tertiary headings, h3
+// 13px          - All other headed elements, h*
+//
+$body-font-size: 0.688em;
+$body-leading: 1.5em;
+//
+// relative to 1em == 11px for all of these after the
+// body is scaled down.
+//
+$heading-font-size: 2.18em;
+$sub-heading-font-size: 1.63em;
+$tertiary-heading-font-size: 1.45em;
+$lessor-heading-font-size: 1.18em;
+//
+// Some more specific sizes:
+//
+$header-font-size: 4.36em;
+$header-auth-font-size: 1.63em;
+$header-auth-font-weight: 400;
+$form-label-font-size: 1.5em;
+
+//
+// Site dimensions:
+//
+$page-margin-x: 30px;
+$page-margin-y: 1em;
+$header-content-padding-top: 1em;
+$header-content-padding-bottom: 1em;
+$header-content-height: $header-font-size;
+$header-height: $header-content-height + $header-content-padding-top + $header-content-padding-bottom;
+$section-margin-top: $header-height + $page-margin-y;
+$footer-height: 75px;

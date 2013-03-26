@@ -1,0 +1,73 @@
+!!!
+%html
+  %head
+    %title
+      = "Marek Julian"
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag "http://openfontlibrary.org/face/linear-regular", :media => "screen"
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
+
+  %body
+    %header
+      %div#header-container
+        %div#header-content
+          %div#header-logo
+            %span.logo-paren
+              (
+            %span.logo-m M
+            %span.logo-j J
+            %span.logo-paren
+              )
+          %div#header-auth
+            - if user_signed_in?
+              %span= "Hi #{current_user.firstname}"
+              %span
+                = link_to "sign out", destroy_user_session_path, :method => :delete
+            - else
+              %span friends, clients or curious:
+              %span
+                = link_to "sign in", new_user_session_path
+
+    / Flash notices
+    - if flash[:notice]
+      %div.flash-notice
+        = flash[:notice]
+
+    %section
+      %div#content
+        / Yield content
+        = yield
+
+    %footer#footer
+      %div#footer-container
+        %div#footer-content
+          %span.footer-name-first marek julian
+          %span.footer-name-last ryniejski
+          %div.footer-link.footer-link-next
+            %a{ :href => "https://twitter.com/marekjulian", :class => "twitter-follow-button", 'data-show-count' => "false" }
+              Follow @marekjulian
+            %script
+              !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs")
+          %div.footer-link.footer-link-next
+            = link_to "blog", "http://marekjulian.blogspot.com/"
+          %div.footer-link.footer-link-next
+            = link_to "500px", "http://www.500px.com/marekjulian"
+          %div.footer-link.footer-link
+            = link_to "flickr",
+            "http://www.flickr.com/photos/96689384@N00/"
+
+    / Javascript goes at the bottom
+    = javascript_include_tag "application"
+    = yield :view_specific_js
+
+    /
+      / Commit revision: #{git_revision}
+      / Commit id: #{git_id}
+      / Commit message: #{git_message}
+      / Commit author: #{git_author}
+      / Commit timestamp: #{git_timestamp}
+      / Server ip: #{server_ip}
+      / Hostname: #{server_name}
+      / Mode: #{ENV["RAILS_ENV"]}
+      / Generated at: #{Time.now}

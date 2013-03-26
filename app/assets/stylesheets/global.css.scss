@@ -1,0 +1,213 @@
+@import "_reset";
+@import "_mixins";
+
+// Fonts
+@include font-face("helvetica-neue", "helvetica-neue-webfont");
+
+@include font-face("agaramondpro-regular", "agaramondpro-regular-webfont");
+
+@include font-face("din", "din-webfont");
+
+@import "_common";
+
+/*
+ * Tell the browser to render HTML 5 elements as block.
+ */
+header, footer, aside, nav, article, section {
+  display: block;
+}
+
+/*
+ * For the sticky footer.
+ */
+html, body {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  height: 100%;
+  font-family: Linear, sans-serif;
+
+  div {
+    font-family: inherit;
+  }
+
+  a {
+    color: $link-color;
+  }
+
+  a:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+}
+
+body {
+  background: $dark-background;
+  font-size: $body-font-size;
+  line-height: $body-leading;
+
+  h1 {
+    font-family: inherit;
+    font-size: $heading-font-size;
+  }
+
+  h2 {
+    font-family: inherit;
+    font-size: $sub-heading-font-size;
+  }
+
+  h3 {
+    font-family: inherit;
+    font-size: $tertiary-heading-font-size;
+  }
+
+  h4, h5 {
+    font-family: inherit;
+    font-size: $lessor-heading-font-size;
+  }
+
+  span, a {
+    font-family: inherit;
+  }
+
+  header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+    height: $header-height;
+    z-index: 50;
+    background-color: $header-bg-color;
+    color: $header-text-color;
+
+    div#header-container {
+      display: block;
+      margin: 0 $page-margin-x 0 $page-margin-x;
+      height: $header-height;
+      font-family: inherit;
+
+      div#header-content {
+        margin: 0px;
+        border-bottom: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: $header-border-color;
+        padding: $header-content-padding-top 0px $header-content-padding-bottom 0px;
+        height: $header-content-height;
+        line-height: $header-content-height;
+        font-family: inherit;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          font-family: inherit;
+        }
+
+        div#header-logo {
+          float: left;
+          font-size: $header-font-size;
+          font-weight: 100;
+
+          span.logo-paren {
+            position: relative;
+            top: -0.1em;
+            font-size: 88%;
+          }
+
+          span.logo-m {
+            color: $marekjulian-magenta;
+          }
+          span.logo-j {
+            color: $marekjulian-magenta;
+          }
+        }
+
+        div#header-auth {
+          float: right;
+          font-size: $header-auth-font-size;
+          color: $marekjulian-gray;
+          font-family: inherit;
+          font-weight: $header-auth-font-weight;
+        }
+
+      }
+    }
+  }
+
+  section {
+    display: block;
+    margin: $section-margin-top $page-margin-x $page-margin-y $page-margin-x;
+    font-family: inherit;
+    font-weight: 200;
+
+    #content {
+      margin-left: 0px;
+      color: $content-text-color;
+    }
+  }
+
+  footer#footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    width: 100%;
+    height: $footer-height;
+    z-index: 50;
+    background-color: $footer-bg-color;
+    color: $footer-text-color;
+
+    div#footer-container {
+      display: block;
+      margin: 0 $page-margin-x 0 $page-margin-x;
+
+      div#footer-content {
+        margin: 0px 0px 0px 0px;
+        border-top: 2px;
+        border-top-style: solid;
+        border-top-color: $footer-border-color;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: $heading-font-size;
+
+        span.footer-name-first {
+          color: $marekjulian-magenta;
+          font-size: $heading-font-size;
+          font-weight: 100;
+        }
+        span.footer-name-last {
+          color: $marekjulian-gray;
+          font-size: $heading-font-size;
+          font-weight: 100;
+        }
+        div.footer-link {
+          float: right;
+          padding: 0px 10px 0px 10px;
+           font-size: $sub-heading-font-size;
+
+          a {
+            color: $marekjulian-gray;
+          }
+
+          a:hover {
+            color: $link-hover-color;
+            text-decoration: underline;
+          }
+        }
+        div.footer-link-next {
+          border-left:  1px;
+          border-left-style: solid;
+          border-left-color: $footer-border-color;
+        }
+      }
+    }
+  }
+
+}
